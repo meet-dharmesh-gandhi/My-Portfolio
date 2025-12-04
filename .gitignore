@@ -1,6 +1,3 @@
-# If you prefer the allow list template instead of the deny list, see community template:
-# https://github.com/github/gitignore/blob/main/community/Golang/Go.AllowList.gitignore
-#
 # Binaries for programs and plugins
 *.exe
 *.exe~
@@ -27,6 +24,45 @@ go.work.sum
 # env file
 .env
 
-# Editor/IDE
-# .idea/
-# .vscode/
+# Node / Frontend
+node_modules/
+.build/
+.vercel/
+.env
+.env.*
+.DS_Store
+
+# SvelteKit
+.svelte-kit/
+vite.config.ts.timestamp-*
+*.svelte.d.ts
+
+# Go / Backend
+
+# Build outputs
+bin/
+dist/
+*.exe
+*.out
+*.test
+
+# Go Modules (auto-generated)
+go.sum
+
+# Auto-generated during dev
+*.log
+
+# Generated Builder Files
+*.zip
+/tmp/
+temp/
+generated/
+
+# OS / Editor junk
+.vscode/
+.idea/
+*.swp
+Thumbs.db
+
+# Docs Cache
+docs/screenshots/temp/
