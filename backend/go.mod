@@ -1,4 +1,4 @@
-module github.com/my-portfolio/backend
+module github.com/meet-dharmesh-gandhi/my-portfolio/backend
 
 go 1.25.0
 

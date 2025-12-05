@@ -3,7 +3,7 @@ package routes
 import (
 	"net/http"
 
-	"github.com/my-portfolio/backend/utils"
+	"github.com/meet-dharmesh-gandhi/my-portfolio/backend/utils"
 )
 
 func healthCheck(w http.ResponseWriter, r *http.Request) {
