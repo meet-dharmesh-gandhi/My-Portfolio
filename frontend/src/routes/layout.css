@@ -1,2 +1,57 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
+
+body {
+    background-color: #202020;
+    color: #f0f0f0;
+}
+
+button {
+    background-color: #2a73c7;
+    padding: 0.2em 1em;
+    border-radius: 0.35em;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+h3 {
+    font-size: 1.17em;
+}
+
+h4 {
+    font-size: 1em;
+}
+
+h5 {
+    font-size: 0.83em;
+}
+
+h6 {
+    font-size: 0.67em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bolder;
+}
+
+a {
+    text-decoration: underline;
+
+    &:link {
+        color: #5656df;
+    }
+
+    &:visited { color: #7542a5; }
+
+    &:active, :active { color: #FF0000; }
+}
