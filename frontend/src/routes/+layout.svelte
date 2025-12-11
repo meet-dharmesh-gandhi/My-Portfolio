@@ -1,12 +1,22 @@
 <script lang="ts">
 	import './layout.css';
 	import favicon from '$lib/assets/favicon.svg';
+	import Navbar from '$lib/components/nav/Navbar.svelte';
 
 	let { children } = $props();
 </script>
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
+	<title>
+		Home page of the portfolio website containing the main links and content overviews of the other
+		pages
+	</title>
+	<meta
+		name="description"
+		content="Home of Meet Gandhi's unique portfolio. Highlights the pages you can explore further and gives breif description about Meet"
+	/>
 </svelte:head>
 
+<Navbar />
 {@render children()}

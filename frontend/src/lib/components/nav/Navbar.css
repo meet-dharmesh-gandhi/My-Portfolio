@@ -1,0 +1,73 @@
+:root {
+	--nav-bar-bg: #303030;
+	--nav-bar-tab-bg: #626262;
+	--nav-dialog-bg: #383838;
+	--nav-search-btn-bg: #78afe3;
+	--nav-option-bg: #145380;
+	--nav-option-active-bg: #4db2fe;
+	--nav-option-border: #2d60c6;
+	--nav-option-hover-border: #091630;
+}
+
+button.nav-tab {
+	transition: all 0.2s ease-in-out;
+	background-color: transparent;
+	color: var(--dark-blue);
+	padding: 2rem;
+	border-radius: 0;
+	font-weight: bold;
+
+	&:hover {
+		background-color: var(--dark-blue);
+		color: var(--white);
+	}
+}
+
+.mega-menu {
+	position: absolute;
+	top: 100%;
+	left: 100%;
+	transform: translateX(-100%);
+}
+
+svg {
+	width: 2rem;
+	height: 2rem;
+}
+
+dialog {
+	.wrapper {
+		width: calc(100vw - 20em);
+	}
+
+	.search-button {
+		padding: 0.2rem 0.5rem;
+
+		svg > * {
+			stroke: var(--blue);
+		}
+	}
+
+	&::before {
+		position: absolute;
+		content: '';
+		top: 0;
+		left: 0;
+		transform: translateX(-100%);
+		width: 1rem;
+		height: 1rem;
+		background-color: var(--white);
+	}
+
+	&::after {
+		position: absolute;
+		content: '';
+		top: 0;
+		left: 0;
+		transform: translateX(-100%);
+		width: 1rem;
+		height: 1rem;
+		background-color: var(--black);
+		border-top-right-radius: 1rem;
+	}
+}
