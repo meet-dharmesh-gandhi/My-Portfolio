@@ -8,10 +8,7 @@
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
-	<title>
-		Home page of the portfolio website containing the main links and content overviews of the other
-		pages
-	</title>
+	<title>Meet Gandhi Portfolio</title>
 	<meta
 		name="description"
 		content="Home of Meet Gandhi's unique portfolio. Highlights the pages you can explore further and gives breif description about Meet"

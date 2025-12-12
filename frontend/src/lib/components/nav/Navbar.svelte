@@ -1,5 +1,4 @@
 <script lang="ts">
-	import type { KeyboardEventHandler } from "svelte/elements";
     import "./Navbar.css"
 	import NavbarOption from "./NavbarOption.svelte";
 	import NavSearch from "./NavSearch.svelte";
@@ -21,6 +20,8 @@
 		if (dialog instanceof HTMLDialogElement) {
 			if (hoveringAt && wantsToView && wantsToView in tabs) {
 				dialog.show();
+				dialog.querySelector('input')?.focus();
+			// }
 			} else {
 				dialog.close();
 			}
@@ -83,7 +84,6 @@
 			</li>
 		{/each}
 	</ul>
-	<!-- {#if hoveringAt && wantsToView && wantsToView in tabs} -->
 	<dialog
 		class="mega-menu bg-transparent"
 		onmouseenter={() => onHoverStart('dialog')}
@@ -91,6 +91,7 @@
 		onkeydown={onKeyDownDialog}
 		bind:this={dialog}
 		closedby="any"
+		role="menu"
 	>
 		<div class="grid grid-cols-2 justify-between gap-10 p-10 rounded-b-2xl wrapper bg-(--white)">
 			<section>
@@ -107,5 +108,4 @@
 			</section>
 		</div>
 	</dialog>
-	<!-- {/if} -->
 </nav>

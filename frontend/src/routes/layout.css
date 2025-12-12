@@ -31,16 +31,6 @@ body {
 	color: var(--blue);
 }
 
-/* button {
-	background-color: var(--button-color);
-	padding: 0.2em 1em;
-	border-radius: 0.35em;
-
-	&:hover {
-		cursor: pointer;
-	}
-} */
-
 h1 {
 	font-size: 2em;
 }
