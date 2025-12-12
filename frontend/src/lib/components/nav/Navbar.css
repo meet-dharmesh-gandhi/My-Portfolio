@@ -35,7 +35,35 @@ svg {
 	height: 2rem;
 }
 
+@keyframes open {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes close {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+
 dialog {
+	--dialog-animation-time: 150ms;
+	transition:
+		display var(--dialog-animation-time) allow-discrete ease-in-out,
+		overlay var(--dialog-animation-time) allow-discrete ease-in-out;
+	animation: close var(--dialog-animation-time) forwards;
+
+	&[open] {
+		animation: open var(--dialog-animation-time) forwards;
+	}
+
 	.wrapper {
 		width: calc(100vw - 20em);
 	}
