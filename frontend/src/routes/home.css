@@ -1,0 +1,25 @@
+.section-gradient {
+	background: linear-gradient(
+		var(--complementary-black) 0%,
+		var(--black) 30%,
+		var(--black) 70%,
+		var(--complementary-black) 100%
+	);
+}
+
+/*
+g-dg-btg-md = green-dark_green-blue_tint_green-medium_blue
+*/
+.g-dg-btg-md-border {
+	border-top-color: var(--green);
+	border-right-color: var(--dark-green);
+	border-left-color: var(--blue-tint-green);
+	border-bottom-color: var(--medium-blue);
+}
+
+hr {
+	width: 60vw;
+	border: 2px solid var(--white);
+	margin-left: auto;
+	margin-right: auto;
+}

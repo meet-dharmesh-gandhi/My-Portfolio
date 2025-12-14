@@ -1,5 +1,9 @@
-<section class="flex flex-col justify-center items-center py-8">
-	<h1 class="text-(--green)">Bio</h1>
+<script lang="ts">
+	const { colorClass = 'bg-(--black)' } = $props();
+</script>
+
+<section class={`flex flex-col justify-center items-center py-8 ${colorClass}`}>
+	<h2 class="text-(--green)">Bio</h2>
 	<div class="w-[80vw] py-2 px-2 flex flex-col justify-start items-start gap-3">
 		<p>
 			Hi, I&rsquo;m Meet Gandhi &mdash; a developer driven by curiosity and a love for building

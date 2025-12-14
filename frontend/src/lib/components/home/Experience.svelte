@@ -1,5 +1,5 @@
 <script lang="ts">
-	import "$lib/components/home/experience.css";
+	import ViewMoreButton from "./ViewMoreButton.svelte";
 
 	interface Experience {
 		role: string,
@@ -7,6 +7,8 @@
 		description?: string;
 		redirect?: string;
 	}
+
+	const { colorClass = 'bg-(--black)' } = $props();
 
     let experiences: Experience[] = [
         {
@@ -24,28 +26,27 @@
     ];
 </script>
 
-<section class="flex flex-col justify-center items-center">
-	<h1 class="text-(--green)">Experience</h1>
+<section class={`flex flex-col justify-center items-center py-8 ${colorClass}`}>
+	<h2 class="text-(--green)">Experience</h2>
 	<article class="grid grid-cols-2 gap-8 p-8">
 		{#each experiences as experience}
-			<div
+			<article
 				class="flex flex-col bg-(--blue) rounded-xl w-fit p-8 text-(--black) border-4 g-dg-btg-md-border"
 			>
-				<h1>{experience.role}</h1>
+				<h3>{experience.role}</h3>
 				{#if experience.org}
-					<h2>{experience.org}</h2>
+					<h4>{experience.org}</h4>
 				{/if}
 				{#if experience.description}
-					<p>{experience.description}</p>
+					<p class="mt-8">{experience.description}</p>
 				{/if}
-				<a
-					href={experience.redirect ?? '/'}
-					class="view-experience-btn flex justify-center items-center self-center gap-4 bg-(--dark-blue) rounded-md text-(--white) w-fit px-4 cursor-pointer mt-8"
-				>
-					Know more about this experience
-					<span class="text-2xl"> &rarr; </span>
-				</a>
-			</div>
+				<div class="mt-8 flex justify-center">
+					<ViewMoreButton
+						link={experience.redirect ?? '/'}
+						text="Know more about this experience"
+					/>
+				</div>
+			</article>
 		{/each}
 	</article>
 </section>
