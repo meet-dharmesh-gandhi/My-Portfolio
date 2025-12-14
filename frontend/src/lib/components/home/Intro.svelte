@@ -2,16 +2,16 @@
 	<h1 class="text-(--green)">Bio</h1>
 	<div class="w-[80vw] py-2 px-2 flex flex-col justify-start items-start gap-3">
 		<p>
-			Hi, I am Meet Gandhi. A developer driven by curiosity, passion and love for building real
-			world systems!
+			Hi, I&rsquo;m Meet Gandhi &mdash; a developer driven by curiosity and a love for building
+			real-world systems.
 		</p>
 		<p>
-			I love working in the System Design and Operating Systems domain but I am well-versed with
-			Full Stack Web Development and Cross Platform Application Development
+			I&rsquo;m particularly interested in system design and operating systems, while also being
+			comfortable across full-stack web and cross-platform application development.
 		</p>
 		<p>
-			This portfolio is the collection of my journey of learning and exploring systems to building
-			them confidently.
+			This portfolio captures that journey &mdash; from learning how systems work to building them
+			with confidence.
 		</p>
 	</div>
 </section>
