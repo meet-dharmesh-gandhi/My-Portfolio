@@ -12,7 +12,6 @@
 button.nav-tab {
 	transition: all 0.2s ease-in-out;
 	background-color: transparent;
-	color: var(--dark-blue);
 	padding: 2rem;
 	border-radius: 0;
 	font-weight: bold;

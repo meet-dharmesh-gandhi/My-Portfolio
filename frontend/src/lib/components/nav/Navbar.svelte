@@ -67,7 +67,9 @@
 	}
 </script>
 
-<nav class="flex items-center relative justify-between pl-8 bg-(--white) text-(--dark-blue)">
+<nav
+	class="flex items-center fixed w-full justify-between pl-8 bg-(--glass-white) text-(--yellow) rounded-b-4xl rounded-bl-4xl backdrop-blur-sm border border-solid border-(--white) border-t-0 transition-all duration-200 hover:rounded-none hover:bg-(--white) hover:backdrop-blur-none hover:text-(--dark-blue) hover:border-none"
+>
 	<h2>Meet Gandhi</h2>
 	<ul class="flex">
 		{#each Object.keys(tabs) as ele}
