@@ -13,22 +13,25 @@
 	--blue: #247fd9;
 	--dark-blue: #064584;
 	--lighter-blue: #00b7ff;
+	--medium-blue: #0f536e;
 	--blue-tint-green: #00d3ee;
 	--blue-green: #00e7bc;
 	--green: #92f48a;
+	--dark-green: #457442;
 	--yellow: #f9f871;
 	--pink: #f45b85;
 	--maroon: #b71a54;
 	--grey: #a5abbd;
 	--black: #2d323e;
 	--white: #bddaff;
+	--glass-white: #9fc8ff74;
 	--pure-white: white;
 	--pure-black: black;
 }
 
 body {
 	background-color: var(--black);
-	color: var(--blue);
+	color: var(--lighter-blue);
 }
 
 h1 {
