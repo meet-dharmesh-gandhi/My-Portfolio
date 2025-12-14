@@ -1,5 +1,6 @@
 <script lang="ts">
-	import ViewMoreButton from "./ViewMoreButton.svelte";
+	import ButtonCard from "../button-card.svelte";
+import Section from "./Section.svelte";
 
     interface Projects {
         title: string;
@@ -38,14 +39,14 @@
     ]
 </script>
 
-<section class={`flex flex-col justify-center items-center gap-4 py-8 ${colorClass}`}>
-	<h2 class="text-(--green)">Projects</h2>
+<Section title="Projects" {colorClass}>
 	<article class="grid grid-cols-3 gap-8 p-8">
 		{#each projects as project}
-			<article
-				class="relative flex flex-col bg-(--blue) text-(--black) rounded-xl p-8 gap-4 border-4 g-dg-btg-md-border"
+			<ButtonCard
+				title={project.title}
+				redirect={project.redirect ?? ''}
+				cardClass="relative gap-4"
 			>
-				<h3>{project.title}</h3>
 				<p>{project.description}</p>
 				<article class="flex flex-wrap gap-x-2 gap-y-1">
 					{#each project.tags as tag}
@@ -56,14 +57,11 @@
 						</p>
 					{/each}
 				</article>
-				<div class="mt-auto self-center">
-					<div aria-hidden="true" class="mb-8"></div>
-					<ViewMoreButton link={project.redirect ?? '/'} text="View this project" />
-				</div>
 				<p class="absolute right-1.5 top-2 bg-(--green) rounded-full w-fit px-2 py-1 text-xs">
 					{project.madeByMeOnly === false ? 'Made In Collaboration' : 'Made By Me'}
 				</p>
-			</article>
+				<div aria-hidden="true" class="mt-auto mb-8"></div>
+			</ButtonCard>
 		{/each}
 	</article>
-</section>
+</Section>

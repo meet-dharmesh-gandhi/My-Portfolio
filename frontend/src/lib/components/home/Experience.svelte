@@ -1,5 +1,6 @@
 <script lang="ts">
-	import ViewMoreButton from "./ViewMoreButton.svelte";
+	import ButtonCard from "../button-card.svelte";
+	import Section from "./Section.svelte";
 
 	interface Experience {
 		role: string,
@@ -26,27 +27,18 @@
     ];
 </script>
 
-<section class={`flex flex-col justify-center items-center py-8 ${colorClass}`}>
-	<h2 class="text-(--green)">Experience</h2>
+<Section title="Experience" {colorClass}>
 	<article class="grid grid-cols-2 gap-8 p-8">
 		{#each experiences as experience}
-			<article
-				class="flex flex-col bg-(--blue) rounded-xl w-fit p-8 text-(--black) border-4 g-dg-btg-md-border"
-			>
-				<h3>{experience.role}</h3>
+			<ButtonCard title={experience.role} redirect={experience.redirect ?? '/'}>
 				{#if experience.org}
 					<h4>{experience.org}</h4>
 				{/if}
 				{#if experience.description}
-					<p class="mt-8">{experience.description}</p>
+					<p class="mt-4">{experience.description}</p>
 				{/if}
-				<div class="mt-8 flex justify-center">
-					<ViewMoreButton
-						link={experience.redirect ?? '/'}
-						text="Know more about this experience"
-					/>
-				</div>
-			</article>
+				<div aria-hidden="true" class="mt-4"></div>
+			</ButtonCard>
 		{/each}
 	</article>
-</section>
+</Section>

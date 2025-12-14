@@ -1,9 +1,10 @@
 <script lang="ts">
+	import Section from "./Section.svelte";
+
 	const { colorClass = 'bg-(--black)' } = $props();
 </script>
 
-<section class={`flex flex-col justify-center items-center py-8 ${colorClass}`}>
-	<h2 class="text-(--green)">Bio</h2>
+<Section title="Bio" {colorClass}>
 	<div class="w-[80vw] py-2 px-2 flex flex-col justify-start items-start gap-3">
 		<p>
 			Hi, I&rsquo;m Meet Gandhi &mdash; a developer driven by curiosity and a love for building
@@ -18,4 +19,4 @@
 			with confidence.
 		</p>
 	</div>
-</section>
+</Section>
