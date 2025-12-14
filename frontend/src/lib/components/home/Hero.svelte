@@ -1,10 +1,11 @@
 <script lang="ts">
     import image from '$lib/assets/Meet Resume Photo.jpg';
+	import { twMerge } from 'tailwind-merge';
 
 	const { colorClass = 'bg-(--black)' } = $props();
 </script>
 
-<section class={`flex gap-8 justify-center items-center h-dvh ${colorClass}`}>
+<section class={twMerge('flex gap-8 justify-center items-center h-dvh', colorClass)}>
 	<div class="rounded-full overflow-hidden h-fit">
 		<img
 			src={image}

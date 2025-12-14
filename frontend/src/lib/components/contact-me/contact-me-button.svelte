@@ -1,5 +1,6 @@
 <script lang="ts">
 	import '$lib/components/contact-me/contact-me-button.css';
+	import { twMerge } from 'tailwind-merge';
 
     let isHovering = $state(false);
 	let hasClicked = $state(false);
@@ -31,7 +32,10 @@
 	<button
 		role="menu"
 		tabindex="0"
-		class={`contact-me-button relative bg-(--white) rounded-lg py-2 px-4 text-(--dark-blue) font-bold cursor-pointer flex flex-col gap-2 justify-end items-end hover:rounded-t-none hover:rounded-tr-none ${isContactVisible ? '' : 'before:hidden after:hidden'}`}
+		class={twMerge(
+			'contact-me-button relative bg-(--white) rounded-lg py-2 px-4 text-(--dark-blue) font-bold cursor-pointer flex flex-col gap-2 justify-end items-end hover:rounded-t-none hover:rounded-tr-none',
+			isContactVisible ? '' : 'before:hidden after:hidden'
+		)}
 		onmouseenter={() => (isHovering = true)}
 		onmouseleave={() => (isHovering = false)}
 		onclick={() => (hasClicked = !hasClicked)}
