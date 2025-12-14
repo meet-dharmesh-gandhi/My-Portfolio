@@ -22,11 +22,22 @@
 	--pink: #f45b85;
 	--maroon: #b71a54;
 	--grey: #a5abbd;
-	--black: #2d323e;
+	--black: #232b3d;
+	--complmentary-black: #203244;
 	--white: #bddaff;
 	--glass-white: #9fc8ff74;
 	--pure-white: white;
 	--pure-black: black;
+}
+
+/*
+g-dg-btg-md = green-dark_green-blue_tint_green-medium_blue
+*/
+.g-dg-btg-md-border {
+	border-top-color: var(--green);
+	border-right-color: var(--dark-green);
+	border-left-color: var(--blue-tint-green);
+	border-bottom-color: var(--medium-blue);
 }
 
 body {
