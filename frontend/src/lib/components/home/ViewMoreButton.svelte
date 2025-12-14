@@ -11,7 +11,7 @@
 
 <a
 	href={link}
-	class="view-experience-btn flex justify-center items-center self-center gap-4 bg-(--dark-blue) rounded-md text-(--white) w-fit px-4 cursor-pointer"
+	class="view-experience-btn revert-a flex justify-center items-center self-center gap-4 bg-(--dark-blue) rounded-md text-(--white) w-fit px-4 cursor-pointer"
 >
 	{text}
 	<span class="text-2xl"> &rarr; </span>

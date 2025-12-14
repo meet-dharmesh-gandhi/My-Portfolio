@@ -17,9 +17,11 @@
 		<h1>Meet Gandhi</h1>
 		<h3>Building Real World Systems</h3>
 		<h4>Flutter &middot; Full Stack &middot; Open Source &middot; System Design</h4>
-		<button
-			class="mt-auto bg-(--white) rounded-full px-8 py-2 w-fit font-bold text-(--dark-blue) cursor-pointer hover:bg-(--dark-blue) hover:text-(--white) transition-all duration-200"
-			>Explore more about me</button
+		<a
+			href="/#bio"
+			class="revert-a mt-auto bg-(--white) rounded-full px-8 py-2 w-fit font-bold text-(--dark-blue) cursor-pointer hover:bg-(--dark-blue) hover:text-(--white) transition-all duration-200"
 		>
+			Explore more about me
+		</a>
 	</div>
 </section>

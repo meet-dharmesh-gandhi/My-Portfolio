@@ -1,11 +1,5 @@
 .view-experience-btn {
 	transition: all 200ms ease-in-out 5ms;
-	text-decoration: none;
-
-	&:visited,
-	&:active {
-		color: var(--white);
-	}
 
 	&:hover {
 		gap: 1.5rem;
