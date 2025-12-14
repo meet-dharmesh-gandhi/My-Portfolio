@@ -1,0 +1,24 @@
+.contact-me-button {
+	&::before {
+		content: '';
+		width: calc(100% + 0.5rem);
+		height: 0.5rem;
+		background-color: var(--white);
+		position: absolute;
+		top: 0;
+		left: 0;
+		transform: translateX(-0.5rem);
+	}
+
+	&::after {
+		content: '';
+		width: 0.5rem;
+		height: 0.5rem;
+		background-color: var(--black);
+		position: absolute;
+		top: 0;
+		left: 0;
+		transform: translateX(-100%);
+		border-top-right-radius: 100%;
+	}
+}

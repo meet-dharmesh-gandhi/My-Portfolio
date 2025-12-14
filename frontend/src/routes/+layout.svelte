@@ -2,6 +2,7 @@
 	import './layout.css';
 	import favicon from '$lib/assets/favicon.svg';
 	import Navbar from '$lib/components/nav/Navbar.svelte';
+	import ContactMeButton from '$lib/components/contact-me/contact-me-button.svelte';
 
 	let { children } = $props();
 </script>
@@ -17,3 +18,4 @@
 
 <Navbar />
 {@render children()}
+<ContactMeButton />
