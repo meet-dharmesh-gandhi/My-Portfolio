@@ -16,7 +16,6 @@
 	let dialog: HTMLDialogElement | null = $state(null);
 
 	$effect(() => {
-		console.log("in effect:", hoveringAt, wantsToView);
 		if (dialog instanceof HTMLDialogElement) {
 			if (hoveringAt && wantsToView && wantsToView in tabs) {
 				dialog.show();
