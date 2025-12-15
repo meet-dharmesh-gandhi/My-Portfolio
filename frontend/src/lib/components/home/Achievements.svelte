@@ -22,7 +22,7 @@
 </script>
 
 <Section title="Achievements" {colorClass}>
-	<article class="flex flex-wrap gap-8 px-8 justify-center items-center">
+	<article class="flex flex-wrap gap-8 p-8 justify-center items-center">
 		{#each achievements as achievement}
 			<h3
 				class="bg-(--blue) rounded-full px-4 py-2 border-2 g-dg-btg-md-border-capsule text-(--white)"
