@@ -46,6 +46,7 @@ import Section from "./Section.svelte";
 				title={project.title}
 				redirect={project.redirect ?? ''}
 				cardClass="relative gap-4"
+				buttonText="View this project"
 			>
 				<p>{project.description}</p>
 				<article class="flex flex-wrap gap-x-2 gap-y-1">

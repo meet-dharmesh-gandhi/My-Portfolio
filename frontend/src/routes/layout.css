@@ -28,6 +28,7 @@
 	--glass-white: #9fc8ff74;
 	--pure-white: white;
 	--pure-black: black;
+	--light-pure-black: #00000088;
 }
 
 html {
@@ -100,4 +101,15 @@ a {
 	&:active {
 		color: revert-layer;
 	}
+}
+
+/* For Chromium Browsers */
+.no-scrollbar::-webkit-scrollbar {
+	display: none;
+}
+
+/* For IE, Edge and Firefox */
+.no-scrollbar {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
 }

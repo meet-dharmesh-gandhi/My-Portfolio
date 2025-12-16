@@ -30,7 +30,11 @@
 <Section title="Experience" {colorClass}>
 	<article class="grid grid-cols-2 gap-8 p-8">
 		{#each experiences as experience}
-			<ButtonCard title={experience.role} redirect={experience.redirect ?? '/'}>
+			<ButtonCard
+				title={experience.role}
+				redirect={experience.redirect ?? '/'}
+				buttonText="View this experience"
+			>
 				{#if experience.org}
 					<h4>{experience.org}</h4>
 				{/if}

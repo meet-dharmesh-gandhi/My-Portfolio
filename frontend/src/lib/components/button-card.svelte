@@ -2,7 +2,14 @@
 	import ViewMoreButton from "./home/ViewMoreButton.svelte";
     import { twMerge } from 'tailwind-merge';
 
-    const { title, redirect, cardClass = '', children } = $props();
+    const {
+		title,
+		redirect,
+		cardClass = '',
+		contentClass = '',
+		buttonText,
+		children
+	} = $props();
 </script>
 
 <article
@@ -11,7 +18,11 @@
 		cardClass
 	)}
 >
-	<h3>{title}</h3>
-	{@render children()}
-	<ViewMoreButton link={redirect ?? '/'} text="View this project" />
+	{#if title}
+		<h3>{title}</h3>
+	{/if}
+	<div class={contentClass}>
+		{@render children()}
+	</div>
+	<ViewMoreButton link={redirect ?? '/'} text={buttonText} />
 </article>

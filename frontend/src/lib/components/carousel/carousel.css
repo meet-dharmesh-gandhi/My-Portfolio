@@ -1,0 +1,8 @@
+.arrow-icon {
+	&:hover {
+		svg {
+			fill: var(--pure-white);
+			stroke: var(--pure-white);
+		}
+	}
+}
