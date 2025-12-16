@@ -35,6 +35,6 @@
 	<ViewMoreButton
 		text="View more achievements"
 		link="/#achievements"
-		className="bg-(--green) text-(--black) rounded-full border-3 border-(--blue) py-1 px-8"
+		className="bg-(--green) text-(--black) rounded-full border-3 border-(--blue) py-1 px-8 font-bold"
 	/>
 </Section>
