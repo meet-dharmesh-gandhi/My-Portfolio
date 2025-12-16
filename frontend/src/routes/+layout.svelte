@@ -1,6 +1,6 @@
 <script lang="ts">
 	import './layout.css';
-	import favicon from '$lib/assets/favicon.svg';
+	import favicon from '$lib/assets/favicon.ico';
 	import Navbar from '$lib/components/nav/Navbar.svelte';
 	import ContactMeButton from '$lib/components/contact-me/contact-me-button.svelte';
 
