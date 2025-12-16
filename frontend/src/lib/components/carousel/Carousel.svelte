@@ -20,7 +20,6 @@
 	}
 
     const { carouselCards, keepArrows = true, className, carouselTime = 3000, children }: Props<T> = $props();
-	const arrowClassName = "arrow-icon bg-(--white) border-2 border-(--blue) rounded-full p-4 cursor-pointer hover:bg-(--dark-blue) hover:border-(--white)";
 
     let interval: NodeJS.Timeout | undefined;
 	let ulEle: HTMLUListElement | null | undefined;
@@ -71,17 +70,19 @@
 	onMount(restartTimer);
 </script>
 
-<article class="relative w-full flex justify-center items-center gap-32">
+<article class="relative w-full flex justify-center items-center">
 	<h2 class="absolute w-0 opacity-0 h-0">Certificates carousel containing 3 certificates</h2>
-	<button
-		class={arrowClassName}
-		onclick={() => scrollCarousel({ left: true, shouldRestartTimer: true })}
-	>
-		{@html LeftIcon}
-	</button>
+	<div class="arrow-icon-wrapper">
+		<button
+			class="arrow-icon"
+			onclick={() => scrollCarousel({ left: true, shouldRestartTimer: true })}
+		>
+			{@html LeftIcon}
+		</button>
+	</div>
 	<ul
 		class={twMerge(
-			'w-[80vw] flex flex-nowrap overflow-x-scroll gap-8 snap-mandatory snap-x p-2 no-scrollbar',
+			'w-[80vw] flex flex-nowrap overflow-x-scroll gap-8 snap-mandatory snap-x p-2 no-scrollbar shrink-0',
 			className
 		)}
 		bind:this={ulEle}
@@ -104,7 +105,9 @@
 		{/each}
 		<div aria-hidden="true" class="min-w-[calc(5vw-2rem)]"></div>
 	</ul>
-	<button class={arrowClassName} onclick={() => scrollCarousel({ shouldRestartTimer: true })}>
-		{@html RightIcon}
-	</button>
+	<div class="arrow-icon-wrapper">
+		<button class="arrow-icon" onclick={() => scrollCarousel({ shouldRestartTimer: true })}>
+			{@html RightIcon}
+		</button>
+	</div>
 </article>
