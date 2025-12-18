@@ -1,6 +1,5 @@
 <script lang="ts">
     import image from '$lib/assets/Meet Resume Photo.jpg';
-	import { twMerge } from 'tailwind-merge';
 	import Section from './Section.svelte';
 
 	const { colorClass = 'bg-(--black)' } = $props();
