@@ -6,8 +6,9 @@
 	import Projects from "$lib/components/home/Projects.svelte";
 	import Achievements from "$lib/components/home/Achievements.svelte";
 	import Certificates from '$lib/components/home/Certificates.svelte';
+	import Journey from '$lib/components/home/Journey.svelte';
 
-	let sections = [Hero, Intro, Experience, Projects, Achievements, Certificates];
+	let sections = [Hero, Intro, Experience, Projects, Achievements, Certificates, Journey];
 </script>
 
 <main>
