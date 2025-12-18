@@ -5,7 +5,9 @@
 </script>
 
 <Section title="Bio" {colorClass}>
-	<div class="w-[80vw] py-2 px-2 flex flex-col justify-start items-start gap-3">
+	<div
+		class="lg:w-[50vw] md:w-[60vw] sm:w-[95vw] py-2 px-2 flex flex-col justify-start items-center gap-3 text-center"
+	>
 		<p>
 			Hi, I&rsquo;m Meet Gandhi &mdash; a developer driven by curiosity and a love for building
 			real-world systems.
