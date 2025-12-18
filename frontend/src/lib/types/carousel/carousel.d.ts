@@ -1,5 +1,5 @@
 export interface CarouselImage {
-	url: string;
+	file: string;
 	alt: string;
 	className?: string;
 }

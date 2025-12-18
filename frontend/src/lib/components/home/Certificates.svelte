@@ -3,10 +3,13 @@
 	import Carousel from "../carousel/Carousel.svelte";
     import Section from "./Section.svelte";
 	import ViewMoreButton from "./ViewMoreButton.svelte";
+    import BIJOIInternshipCertificate from '$lib/assets/Certificate-Images/BIJOI Certificate.jpg';
+    import ICVESVolunteeringCertificate from '$lib/assets/Certificate-Images/ICVES Conference Volunteering Certificate.jpg';
+    import WMCWinningCertificate from '$lib/assets/Certificate-Images/WMC Winning Certificate.jpg';
 
     interface Certificates {
         title: string;
-        filename: string;
+        file: string;
         description?: string;
         redirect?: string;
     }
@@ -19,23 +22,22 @@
 
     const { colorClass } = $props();
 
-    const basePath = '/src/lib/assets/Certificate-Images/';
     const certificates: Certificates[] = [
         {
             title: 'BIJOI Internship',
-            filename: 'BIJOI Certificate.jpg',
+            file: BIJOIInternshipCertificate,
             description: 'Summmer internship 2025 certificate at BIJOI.',
             redirect: '/',
         },
         {
             title: 'ICVES Volunteer',
-            filename: 'ICVES Conference Volunteering Certificate.jpg',
+            file: ICVESVolunteeringCertificate,
             description: 'Volunteer at IEEE AUSB hosted ICVES international conference.',
             redirect: '/',
         },
         {
             title: 'WMC Hackathon',
-            filename: 'WMC Winning Certificate.jpg',
+            file: WMCWinningCertificate,
             description: 'Won the WMC Competition at AU',
             redirect: '/',
         }
@@ -43,7 +45,7 @@
 
     const carouselCards: CarouselCard<CarouselExtras>[] = certificates.map((certificate) => ({
         image: {
-            url: basePath + certificate.filename,
+            file: certificate.file,
             alt: `${certificate.title} Certificate`,
             className: 'aspect-[2/1] object-cover object-top mb-4'
         },

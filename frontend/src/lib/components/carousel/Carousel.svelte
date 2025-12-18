@@ -97,7 +97,7 @@
 			>
 				<img
 					class={carouselCard.image.className ?? ''}
-					src={carouselCard.image.url}
+					src={carouselCard.image.file}
 					alt={carouselCard.image.alt}
 				/>
 				{@render children({ carouselCard })}
