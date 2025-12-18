@@ -1,11 +1,12 @@
 <script lang="ts">
     import image from '$lib/assets/Meet Resume Photo.jpg';
 	import { twMerge } from 'tailwind-merge';
+	import Section from './Section.svelte';
 
 	const { colorClass = 'bg-(--black)' } = $props();
 </script>
 
-<section class={twMerge('flex gap-8 justify-center items-center h-dvh', colorClass)}>
+<Section {colorClass} className="gap-8 h-dvh flex-row" showTitle={false} title="Overview">
 	<div class="rounded-full overflow-hidden h-fit">
 		<img
 			src={image}
@@ -25,4 +26,4 @@
 			Explore more about me
 		</a>
 	</div>
-</section>
+</Section>
