@@ -7,6 +7,7 @@
 	import Achievements from "$lib/components/home/Achievements.svelte";
 	import Certificates from '$lib/components/home/Certificates.svelte';
 	import Journey from '$lib/components/home/Journey.svelte';
+	import Footer from '$lib/components/footer/Footer.svelte';
 
 	let sections = [Hero, Intro, Experience, Projects, Achievements, Certificates, Journey];
 </script>
@@ -18,4 +19,5 @@
 			<hr />
 		{/if}
 	{/each}
+	<Footer />
 </main>
