@@ -1,4 +1,6 @@
-svg,
-path {
-	fill: var(--black);
+.footer {
+	svg,
+	path {
+		fill: var(--black);
+	}
 }

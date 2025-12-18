@@ -20,7 +20,7 @@
     ];
 </script>
 
-<footer class="flex justify-around bg-(--blue) py-4">
+<footer class="footer flex justify-around bg-(--blue) py-4">
 	<aside
 		class="flex flex-col justify-center items-center flex-1 py-4 border-r-2 border-r-(--black)"
 	>
