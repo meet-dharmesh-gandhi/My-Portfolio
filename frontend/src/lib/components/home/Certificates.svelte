@@ -69,7 +69,7 @@
 			</div>
 			{#if carouselCard.extraInfo.redirect}
 				<ViewMoreButton
-					text="View this experience"
+					text="View this certificate"
 					link={carouselCard.extraInfo.redirect}
 					type="link"
 					className="mb-8 mt-auto"
