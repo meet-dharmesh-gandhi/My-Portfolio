@@ -2,8 +2,6 @@ package utils
 
 import (
 	"fmt"
-	"math/rand"
-	"strconv"
 	"strings"
 )
 
@@ -198,62 +196,6 @@ func parseData(inp string) any {
 			resultMap[key] = parseData(strings.TrimSpace(currentValue))
 		}
 		return resultMap
-	} else if (inp[:5] == "array;" && strings.Count(inp, ";") >= 2) {
-		println("array with array;length;type syntax")
-		// array with array;length;type syntax
-		parts := strings.Split(inp, ";")
-		if len(parts) < 3 {
-			return []any{}
-		}
-		lengthPart := parts[1]
-		typePart := parts[2]
-		generatedArray := []any{}
-		// we take the number of specified elements and subtract those many from the length
-		// then we look at the compound types specified
-		// then using random numbers we generate the chances of which type comes up from the compound types
-		// then we create elements of those types and fill the array skipping the indices which have explicit types specified
-		// finally we fill in the explicit types at the specified indices with the actual elements
-		// length parsing
-		length := 5 // default length
-		if strings.HasPrefix(lengthPart, "(") && strings.HasSuffix(lengthPart, ")") {
-			rangePart := lengthPart[1 : len(lengthPart)-1]
-			rangeBounds := strings.Split(rangePart, "_")
-			if len(rangeBounds) == 2 {
-				min, err1 := strconv.Atoi(rangeBounds[0])
-				max, err2 := strconv.Atoi(rangeBounds[1])
-				if err1 == nil && err2 == nil {
-					length = (min + max)/2
-				} else if err1 == nil && err2 != nil {
-					length = min
-				} else if err1 != nil && err2 == nil {
-					length = max
-				}
-			} else if len(rangeBounds) == 1 && rangeBounds[0] != "" {
-				if v, err := strconv.Atoi(rangeBounds[0]); err == nil {
-					length = v
-				}
-			}
-		} else {
-			if v, err := strconv.Atoi(lengthPart); err == nil {
-				length = v
-			}
-		}
-		// we check the number of specified valid elements and put them in an array
-		explicitElements := make(map[int]any)
-		givenExplicitElements := parts[3:]
-		for _, elemSpec := range givenExplicitElements {
-			elemParts := strings.SplitN(elemSpec, ":", 2)
-			if len(elemParts) != 2 {
-				continue
-			}
-			indexPart := elemParts[0]
-			typeSpecPart := elemParts[1]
-			if index, err := strconv.Atoi(indexPart); err == nil {
-				if index >= 0 && index < length {
-					explicitElements[index] = generateRandomType(typeSpecPart)
-				}
-			}
-		}
 	} else if inp[0] == '[' && inp[len(inp)-1] == ']' {
 		println("array")
 		// array
@@ -287,61 +229,6 @@ func parseData(inp string) any {
 			resultArray = append(resultArray, parseData(strings.TrimSpace(currentElement)))
 		}
 		return resultArray
-	} else if strings.HasPrefix(inp, "bool|") {
-		println("bool")
-		// bool
-		var boolPart string = strings.ToLower(inp[5:])
-		switch boolPart {
-		case "true":
-			return true
-		case "false":
-			return false
-		default:
-			// generate a random bool
-			return rand.Intn(2) == 1
-		}
-	} else if strings.HasPrefix(inp, "int|") {
-		println("int")
-		// int
-		numPart := inp[4:]
-		switch numPart {
-		case "":
-			return rand.Intn(150)
-		case "-":
-			// negative random
-			return -rand.Intn(150)
-		}
-		if v, err := strconv.Atoi(numPart); err == nil {
-			return v
-		}
-		// fallback random
-		return rand.Intn(150)
-	} else if strings.HasPrefix(inp, "float|") {
-		println("float")
-		// float
-		numPart := inp[6:]
-		switch numPart {
-		case "":
-			return rand.Float64() * 150
-		case "-":
-			// negative random
-			return -rand.Float64() * 150
-		}
-		if v, err := strconv.ParseFloat(numPart, 64); err == nil {
-			return v
-		}
-		return rand.Float64() * 150
-	} else if strings.HasPrefix(inp, "string|") {
-		println("string with prefix")
-		// string
-		lengthPart := inp[7:]
-		if lengthPart == "" {
-			lengthPart = "10"
-		}
-		if v, err := strconv.Atoi(lengthPart); err == nil {
-			return generateRandomString(v)
-		}
-		return generateRandomString(10)
 	}
 	println("plain string")
 	// plain string

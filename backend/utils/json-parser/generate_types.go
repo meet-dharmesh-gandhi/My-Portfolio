@@ -114,8 +114,10 @@ as well as more complex types like arrays and maps with specific lengths and ele
 
 the supported type strings are:
 
+- "<string>": gives back the same string as is, no parsing is done
 - "string|": generates a random string of length 10
 - "string|<length>": generates a random string of the specified length
+- "string|<string>": gives back the string as is, can be used when parsing is possible but not needed
 - "int|": generates a random integer between 0 and 150
 - "int|<number>": generates a random integer between 0 and the specified number
 - "int|-": generates a random negative integer between 0 and -150
@@ -126,6 +128,14 @@ the supported type strings are:
 - "float|-<number>": generates a random negative float between 0 and the specified negative number
 - "bool|": generates a random boolean value
 - "bool|<boolean>": returns the boolean as is (true or false, case insensitive)
+- "{<key>:<valueType>,...}":
+	generates a map of given explicit keys and value types.
+	- <key> is an explicit string which will be kept as the map key
+	- <valueType> is the type of the value to be generated, can be anything in this list
+	- there has to be a comma at the end of the map if it contains a single key-value pair
+- "[<elementType>,...]":
+	generates an array of the given types
+	- <elementType> is the type of the element to generate, can be anything in this list
 - "array;<length>;<type1>:<type2>:...;ind:<explicit_type>;...":
 	generates an array of the specified length with elements of the specified types,
 	allowing for explicit element values
@@ -144,11 +154,6 @@ the supported type strings are:
 	- <keyType> and <valueType> can be any valid single or compound primitive type enclosed in parantehese () separated by ':' for compound types
 	- explicit key-value pairs are specified as comma separated key:value pairs,
 		where key is the explicit key and value is the corresponding value
-- "{<key>:<valueType>,...}":
-	generates a map of given explicit keys and value types.
-	- <key> is an explicit string which will be kept as the map key
-	- <valueType> is the type of the value to be generated, can be anything in this list
-	- there has to be a comma at the end of the map if it contains a single key-value pair
 
 If the type string does not match any of the supported formats, it is returned as is.
 

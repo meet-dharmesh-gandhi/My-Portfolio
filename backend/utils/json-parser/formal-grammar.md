@@ -22,12 +22,12 @@ RBC -> '}'
 UD -> '\_'
 
 Actual Rules:
-S -> G|S|I|F|B|A|M
+S -> G|ST|I|F|B|A|M
 
 G -> U|g U
 g -> 'general|'
 
-S -> s|s PN
+ST -> s|s PN
 s -> 'string|'
 
 I -> i|i PN|i LP IN UD IN RP|LP UD IN RP|LP IN UD RP
