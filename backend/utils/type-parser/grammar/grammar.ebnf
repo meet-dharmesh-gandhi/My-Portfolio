@@ -1,0 +1,24 @@
+Type = Primitive | Complex;
+
+
+Primitive = Int | String | Bool;
+
+Int = INT, PIPE, [Number];
+String = STRING, PIPE, [Number];
+Bool = BOOL, PIPE, [TRUE | FALSE];
+
+
+Complex = Array | LiteralArray | Map | LiteralMap;
+
+Array = ARRAY, SEMICOLON, NumberRange, SEMICOLON, CompoundType, {SEMICOLON, Number, COLON, CompoundType};
+
+LiteralArray = LSQUARE, InQuoteType, {COMMA, InQuoteType}, RSQUARE;
+
+Map = MAP, SEMICOLON, NumberRange, SEMICOLON, CompoundType, SEMICOLON, CompoundType, {SEMICOLON, StringLiteral, COLON, CompoundType};
+
+LiteralMap = LBRACE, StringLiteral, COLON, CompoundType, {COMMA, StringLiteral, COLON, CompoundType}, RBRACE;
+
+
+InQuoteType = QUOTE, Type, QUOTE;
+CompoundType = InQuoteType | (LPAREN, InQuoteType, {COLON, InQuoteType}, RPAREN);
+NumberRange = Number | (LPAREN, Number, UNDERSCORE, Number, RPAREN);
