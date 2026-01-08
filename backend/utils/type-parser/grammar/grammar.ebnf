@@ -3,14 +3,14 @@ Type = Primitive | Complex;
 
 Primitive = Int | String | Bool;
 
-Int = INT, PIPE, [Number];
-String = STRING, PIPE, [Number];
+Int = INT, PIPE, [NumberRange];
+String = STRING, PIPE, [NumberRange];
 Bool = BOOL, PIPE, [TRUE | FALSE];
 
 
 Complex = Array | LiteralArray | Map | LiteralMap;
 
-Array = ARRAY, SEMICOLON, NumberRange, SEMICOLON, CompoundType, {SEMICOLON, Number, COLON, CompoundType};
+Array = ARRAY, SEMICOLON, NumberRange, SEMICOLON, CompoundType, {SEMICOLON, NumberRange, COLON, CompoundType};
 
 LiteralArray = LSQUARE, InQuoteType, {COMMA, InQuoteType}, RSQUARE;
 
@@ -21,4 +21,4 @@ LiteralMap = LBRACE, StringLiteral, COLON, CompoundType, {COMMA, StringLiteral, 
 
 InQuoteType = QUOTE, Type, QUOTE;
 CompoundType = InQuoteType | (LPAREN, InQuoteType, {COLON, InQuoteType}, RPAREN);
-NumberRange = Number | (LPAREN, Number, UNDERSCORE, Number, RPAREN);
+NumberRange = Number | (LPAREN, [Number], UNDERSCORE, [Number], RPAREN);
