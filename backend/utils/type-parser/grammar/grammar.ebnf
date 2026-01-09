@@ -12,7 +12,7 @@ Complex = Array | LiteralArray | Map | LiteralMap;
 
 Array = ARRAY, SEMICOLON, NumberRange, SEMICOLON, CompoundType, {SEMICOLON, NumberRange, COLON, CompoundType};
 
-LiteralArray = LSQUARE, InQuoteType, {COMMA, InQuoteType}, RSQUARE;
+LiteralArray = LSQUARE, CompoundType, {COMMA, CompoundType}, RSQUARE;
 
 Map = MAP, SEMICOLON, NumberRange, SEMICOLON, CompoundType, SEMICOLON, CompoundType, {SEMICOLON, StringLiteral, COLON, CompoundType};
 
