@@ -43,7 +43,7 @@
 
 ## LiteralArray Rules:
 
-    - The InQuoteType will be the type of the generated element at the exact same index as the InQuoteType is
+    - The CompoundType will be the type of the generated element at the exact same index as the CompoundType is
 
 ## Map Rules:
 
