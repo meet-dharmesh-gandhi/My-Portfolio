@@ -19,6 +19,5 @@ Map = MAP, SEMICOLON, NumberRange, SEMICOLON, CompoundType, SEMICOLON, CompoundT
 LiteralMap = LBRACE, StringLiteral, COLON, CompoundType, {COMMA, StringLiteral, COLON, CompoundType}, RBRACE;
 
 
-InQuoteType = QUOTE, Type, QUOTE;
-CompoundType = LPAREN, InQuoteType, {COLON, InQuoteType}, RPAREN;
+CompoundType = LPAREN, Type, {COLON, Type}, RPAREN;
 NumberRange = Number | (LPAREN, [Number], UNDERSCORE, [Number], RPAREN);
