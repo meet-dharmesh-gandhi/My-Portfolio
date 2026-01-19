@@ -20,5 +20,5 @@ LiteralMap = LBRACE, StringLiteral, COLON, CompoundType, {COMMA, StringLiteral, 
 
 
 InQuoteType = QUOTE, Type, QUOTE;
-CompoundType = InQuoteType | (LPAREN, InQuoteType, {COLON, InQuoteType}, RPAREN);
+CompoundType = LPAREN, InQuoteType, {COLON, InQuoteType}, RPAREN;
 NumberRange = Number | (LPAREN, [Number], UNDERSCORE, [Number], RPAREN);
